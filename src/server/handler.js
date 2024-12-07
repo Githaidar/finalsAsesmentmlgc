@@ -12,9 +12,9 @@ async function postPredictHandler(request, h) {
   const createdAt = new Date().toISOString();
  
   const data = {
+    "id": id,
     "result": label,
     "suggestion": suggestion,
-    "confidenceScore": confidenceScore,
     "createdAt": createdAt
   }
 
@@ -22,7 +22,7 @@ async function postPredictHandler(request, h) {
  
   const response = h.response({
     status: 'success',
-    message: confidenceScore > 99 ? 'Model is predicted successfully.' : 'Model is predicted successfully but under threshold. Please use the correct picture',
+    message:'Model is predicted successfully' ,
     data
   })
   response.code(201);

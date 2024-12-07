@@ -29,12 +29,12 @@ async function predictClassification(model, image) {
         }
         
         if(label === 'Non-cancer') {
-            suggestion = "Anda sehat!"
+            suggestion = "Penyakit kanker tidak terdeteksi."
         }
  
         return { confidenceScore, label, suggestion };
     } catch (error) {
-        throw new InputError(`Terjadi kesalahan input: ${error.message}`)
+        throw new InputError('Terjadi kesalahan dalam melakukan prediksi')
     }
 }
  
